@@ -1,14 +1,14 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Detail from "./routes/Detail";
 import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PROCESS_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/movie/:id" element={<Detail />} />
         <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
